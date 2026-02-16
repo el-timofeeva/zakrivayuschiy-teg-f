@@ -11,8 +11,40 @@
     <link rel="stylesheet" href="./styles/animations.css" />
   </head>
   <body class="page">
-    <header class="header"></header>
-    <main></main>
+    <header class="header container">
+      <p class="header__logo">&lt;/HTML&gt;</p>
+      <h1 class="header__heading">Закрывающий тег</h1>
+    </header>
+    <main class="content">
+      <ul>
+        <li>
+          <article class="card container">
+            <h2 class="card__heading">Заголовок карточки</h2>
+            <div class="card__image-container">
+              <img src="./images/image.png" alt="" class="card__image">
+            </div>
+            <div class="card__text-container">
+              <p class="card__text">Текст карточки</p>
+              <p class="card__text">Текст карточки</p>
+              <div class="card__buttons">
+                <button class=" card__icon-button">
+                  <img class="like-icon" src="./svg/heart in paths.svg"></img>
+                </button>
+                <button class="card__text-button card__like-button">
+                  <span class="button__text">Like</span>
+                </button>
+              </div>
+            </div>
+          </article>
+        </li>
+      </ul>
+      <button class="card__text-button card__text-button_icon">
+        <svg width="21" height="21" viewBox="0 0 39 39" fill="none"       xmlns="http://www.w3.org/2000/svg">
+          <use href="./svg/floppy.svg#floppy"></use>
+        </svg>
+        <span class="button__text">Сохранить на память</span>
+      </button>
+    </main>
     <script src="./scripts/like.js"></script>
   </body>
 </html>
