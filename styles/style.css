@@ -131,16 +131,16 @@ font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   align-items: center;
   justify-content: right;
   padding-block-start: 23px;
-  gap: 7px;
+  /* gap: 7px; */
 }
 
 .card__icon-button {
+  padding: 0;
   border: none;
   background-color: transparent;
   cursor: pointer;
-  width: 38px;
-  height: 38px;
-  object-position: center;
+  width: 43px;
+  height: 40px;
   overflow: hidden;
   border: 2px solid transparent;
   transition: border 0.3s ease;
@@ -170,6 +170,10 @@ font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   cursor: pointer;
   transition: box-shadow 0.3s ease;
 }
+
+/* .card__like-button {
+  min-block-size: 40px;
+} */
 
 .card__text-button:focus {
   outline: none;
@@ -279,4 +283,16 @@ font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 
 .decoration-4-sprint {
   filter: sepia(0.2) contrast(1.2) grayscale(1);
+}
+
+.heart {}
+
+.core {}
+
+.main-body {}
+
+.contour {}
+
+.sparks {
+  opacity: 0;
 }
