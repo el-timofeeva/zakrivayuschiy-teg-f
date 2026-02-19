@@ -35,7 +35,6 @@
 }
 
 .header {
-  box-sizing: content-box;
   margin: 0 auto;
   margin-block-start: 98px;
   margin-block-end: 96px;
@@ -154,7 +153,6 @@ font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   min-inline-size: 130px;
   min-block-size: 38px;
   padding-inline: 20px;
-  
 }
 
 .card__text-button_icon {
@@ -166,4 +164,81 @@ font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   font-family: var(--PressStart2P, "Courier New", sans-serif);
   font-size: 0.875rem;
   line-height: 0.7875rem;
+}
+
+.dialog {
+  /* display: none; */
+  inline-size: 353px;
+  padding: 30px;
+  border: 2px solid #000;
+}
+
+.dialog__text-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding-block-end: 30px;
+}
+
+.dialog__text {
+  font-family: var(--PressStart2P, "Courier New", sans-serif);
+  font-size: 0.875rem;
+  line-height: 1.3125rem;
+  text-transform: uppercase;
+  inline-size: 100%;
+}
+
+.dialog__button {
+  border: 2px solid #000;
+  background-color: #fff;
+  inline-size: 100%;
+  min-block-size: 38px;
+  font-family: var(--PressStart2P, "Courier New", sans-serif);
+  font-size: 0.875rem;
+  line-height: 0.7875rem;
+  text-transform: uppercase;
+}
+
+.dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.75);
+} 
+
+@media (width <= 375px) {
+  .card__text-button_icon {
+    flex-direction: column;
+    padding: 15px 18px;
+    inline-size: 306px;
+  }
+}
+
+.decoration-0-sprint {
+  filter: brightness(1.2) saturate(1.1);
+}
+
+.decoration-1-1-sprint {
+  filter: saturate(1.2);
+}
+
+.decoration-1-2-sprint {
+  filter: saturate(1.2);
+}
+
+.decoration-2-1-sprint {
+  filter: brightness(1.1) saturate(1.3);
+}
+
+.decoration-2-2-sprint {
+  filter: brightness(1.1) sepia(0.5);
+}
+
+.decoration-3-1-sprint {
+  filter: saturate(1.3) contrast(1.1);
+}
+
+.decoration-3-2-sprint {
+  filter: saturate(1.2);
+}
+
+.decoration-4-sprint {
+  filter: sepia(0.2) contrast(1.2) grayscale(1);
 }
