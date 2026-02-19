@@ -31,14 +31,14 @@
 
 .container {
   width: var(--container-width);
-  border: 2px solid #000;
+  border: 2px solid var(--accent-color, #000);
 }
 
 .header {
   margin: 0 auto;
   margin-block-start: 98px;
   margin-block-end: 96px;
-  background-color: #fff;
+  background-color: var(--bg-color, #fff);
   font-family: var(--PressStart2P, "Courier New", sans-serif);
   text-transform: uppercase;
   text-align: center;
@@ -69,7 +69,7 @@ font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 }
 
 .card {
-  background-color: #fff;
+  background-color: var(--bg-color, #fff);
 }
 
 .card__heading {
@@ -84,9 +84,8 @@ font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 }
 
 .card__label {
-  /* content: '</HTML>'; */
   position: absolute;
-  color: #000;
+  color: var(--accent-color, #000);
   font-family: var(--PressStart2P, "Courier New", sans-serif);
   text-transform: uppercase;
   font-size: 0.875rem;
@@ -109,7 +108,7 @@ font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   aspect-ratio: 1/1;
   inline-size: 100%;
   block-size: 100%;
-  border-block: 2px solid #000;
+  border-block: 2px solid var(--accent-color, #000);
 }
 
 .card__text-container {
@@ -132,27 +131,64 @@ font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   align-items: center;
   justify-content: right;
   padding-block-start: 23px;
+  gap: 7px;
 }
 
 .card__icon-button {
   border: none;
   background-color: transparent;
+  cursor: pointer;
+  width: 38px;
+  height: 38px;
+  object-position: center;
+  overflow: hidden;
+  border: 2px solid transparent;
+  transition: border 0.3s ease;
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid var(--accent-color, #000);
+}
+
+.card__icon-button:focus {
+  outline: none;
 }
 
 .like-icon {
-  width: 38px;
-  height: 38px;
 }
 
 .card__text-button {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid #000;
-  background-color: #fff;
-  min-inline-size: 130px;
+  border: 2px solid var(--accent-color, #000);
+  background-color: var(--bg-color, #fff);
+  min-inline-size: 130px; 
   min-block-size: 38px;
-  padding-inline: 20px;
+  padding-inline: 20px; 
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.card__text-button:focus {
+  outline: none;
+  box-shadow: 2px 2px var(--accent-color, #000);
+}
+
+.card__text-button::after {
+  position: absolute;
+  content: '';
+  transform-origin: left;
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent-color);
+  transform: scaleX(0);
+  transition: transform 0.5s ease-in-out;
+}
+
+.card__text-button:hover::after {
+  transform: scaleX(1);
 }
 
 .card__text-button_icon {
@@ -161,16 +197,25 @@ font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 }
 
 .button__text {
+  position: relative;
   font-family: var(--PressStart2P, "Courier New", sans-serif);
   font-size: 0.875rem;
   line-height: 0.7875rem;
+  z-index: 1;
+  color: var(--text-hover-color, #fff);
+  mix-blend-mode: difference;
+}
+
+.floppy-icon {
+  position: relative;
+  z-index: 1;
+  mix-blend-mode: difference;
 }
 
 .dialog {
-  /* display: none; */
   inline-size: 353px;
   padding: 30px;
-  border: 2px solid #000;
+  border: 2px solid var(--accent-color, #000);
 }
 
 .dialog__text-container {
@@ -189,14 +234,7 @@ font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 }
 
 .dialog__button {
-  border: 2px solid #000;
-  background-color: #fff;
   inline-size: 100%;
-  min-block-size: 38px;
-  font-family: var(--PressStart2P, "Courier New", sans-serif);
-  font-size: 0.875rem;
-  line-height: 0.7875rem;
-  text-transform: uppercase;
 }
 
 .dialog::backdrop {

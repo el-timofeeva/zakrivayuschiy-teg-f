@@ -190,7 +190,7 @@
                 <p class="card__text">Середина февраля. В этой точке пути кажется, будто бы идти во фронтенд в 2025г было ошибкой. Возможно, скоро в нашей семье будет два безработных разработчика: один с опытом, а другой – я 😂 Но пока еще теплится надежда, что все когда-нибудь будет хорошо.</p>
               </div>
               <div class="card__buttons">
-                <button class=" card__icon-button">
+                <button class="card__icon-button">
                   <img class="like-icon" src="./svg/heart in paths.svg"></img>
                 </button>
                 <button class="card__text-button card__like-button">
@@ -205,7 +205,7 @@
               onclick="window['dialog-id'].showModal()" 
               aria-controls="dialog-id"
               class="card__text-button card__text-button_icon">
-        <svg width="21" height="21" viewBox="0 0 39 39" fill="none"       xmlns="http://www.w3.org/2000/svg">
+        <svg width="21" height="21" viewBox="0 0 39 39" fill="none"       xmlns="http://www.w3.org/2000/svg" class="floppy-icon">
           <use href="./svg/floppy.svg#floppy"></use>
         </svg>
         <span class="button__text">Сохранить на память</span>
@@ -219,28 +219,11 @@
         </div>
         <button type="button" 
         onclick="window['dialog-id'].close()"
-        class="dialog__button">Ok</button>
+        class="card__text-button dialog__button">
+        <span class="button__text">OK</span>
+      </button>
       </dialog>
     </main>
     <script src="./scripts/like.js"></script>
   </body>
 </html>
-
-<!-- <article class="card container">
-            <h2 class="card__heading">Заголовок карточки</h2>
-            <div class="card__image-container">
-              <img src="./images/image.png" alt="" class="card__image">
-            </div>
-            <div class="card__text-container">
-              <p class="card__text">Текст карточки</p>
-              <p class="card__text">Текст карточки</p>
-              <div class="card__buttons">
-                <button class=" card__icon-button">
-                  <img class="like-icon" src="./svg/heart in paths.svg"></img>
-                </button>
-                <button class="card__text-button card__like-button">
-                  <span class="button__text">Like</span>
-                </button>
-              </div>
-            </div>
-          </article> -->
