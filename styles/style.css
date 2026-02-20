@@ -131,7 +131,6 @@ font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   align-items: center;
   justify-content: right;
   padding-block-start: 23px;
-  /* gap: 7px; */
 }
 
 .card__icon-button {
@@ -154,9 +153,6 @@ font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   outline: none;
 }
 
-.like-icon {
-}
-
 .card__text-button {
   position: relative;
   display: flex;
@@ -171,11 +167,7 @@ font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   transition: box-shadow 0.3s ease;
 }
 
-/* .card__like-button {
-  min-block-size: 40px;
-} */
-
-.card__text-button:focus {
+.card__text-button:focus-visible {
   outline: none;
   box-shadow: 2px 2px var(--accent-color, #000);
 }
@@ -285,14 +277,63 @@ font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   filter: sepia(0.2) contrast(1.2) grayscale(1);
 }
 
-.heart {}
+.core {
+  transition: fill 0.3s linear 0.03s;
+}
 
-.core {}
+.main-body {
+  transition: fill 0.3s linear;
+}
 
-.main-body {}
-
-.contour {}
+.contour {
+  transition: fill 0.1s linear;
+}
 
 .sparks {
   opacity: 0;
+}
+
+.like-icon:hover .core {
+  fill: var(--accent-color, #000);
+  transition: fill 0.3s linear;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--accent-color, #000);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon:active .core {
+  fill: var(--animation-fill-color, #FF0000);
+  transition: fill 0.3s linear;
+}
+
+.like-icon:active .main-body {
+  fill: var(--animation-fill-color, #FF0000);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--animation-fill-color, #FF0000);
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--animation-fill-color, #FF0000);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--animation-fill-color, #FF0000);
+  transition: fill 0.3s linear 0.06s;
+}
+
+.like-icon.is-liked {
+  animation: heart 0.3s ease-in 0.1s;
+  transform-origin: center;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks 0.3s ease-in 0.3s;
+  transform-origin: center;
 }
