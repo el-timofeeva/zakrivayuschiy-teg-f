@@ -22,7 +22,8 @@
   max-inline-size: 1440px;
   min-block-size: 100dvb;
   font-family: var(--Inter, "Arial", sans-serif);
-  font-variation-settings: 'wght' var(--card-text-weight, 410);
+  font-variation-settings: "wght" var(--card-text-weight, 410);
+  background-color: var(--bg-color);
   background-image: var(--background-gradient);
   background-size: cover;
   background-attachment: fixed;
@@ -30,7 +31,7 @@
 }
 
 .container {
-  width: var(--container-width);
+  inline-size: var(--container-width);
   border: 2px solid var(--accent-color, #000);
 }
 
@@ -51,7 +52,7 @@
 }
 
 .header__heading {
-font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 }
 
 .content {
@@ -73,8 +74,8 @@ font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 }
 
 .card__heading {
-  font-variation-settings: 'wght' var(--card-title-weight, 715);
-  font-size: 18px;
+  font-variation-settings: "wght" var(--card-title-weight, 715);
+  font-size: 1.125rem;
   padding: 5px 10px 3px;
   min-height: 30px;
 }
@@ -95,10 +96,10 @@ font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   mix-blend-mode: hard-light;
   -webkit-text-stroke: 1px var(--text-stroke-color, #fff);
   text-shadow:
-  -1px 0 var(--text-stroke-color, #fff), 
-  0 1px var(--text-stroke-color, #fff), 
-  1px 0 var(--text-stroke-color, #fff), 
-  0 -1px var(--text-stroke-color, #fff);
+    -1px 0 var(--text-stroke-color, #fff),
+    0 1px var(--text-stroke-color, #fff),
+    1px 0 var(--text-stroke-color, #fff),
+    0 -1px var(--text-stroke-color, #fff);
 }
 
 .card__image {
@@ -127,7 +128,7 @@ font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 }
 
 .card__buttons {
-  display: flex;  
+  display: flex;
   align-items: center;
   justify-content: right;
   padding-block-start: 23px;
@@ -135,11 +136,10 @@ font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 
 .card__icon-button {
   padding: 0;
-  border: none;
   background-color: transparent;
   cursor: pointer;
-  width: 43px;
-  height: 40px;
+  inline-size: 43px;
+  block-size: 40px;
   overflow: hidden;
   border: 2px solid transparent;
   transition: border 0.3s ease;
@@ -160,9 +160,9 @@ font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   justify-content: center;
   border: 2px solid var(--accent-color, #000);
   background-color: var(--bg-color, #fff);
-  min-inline-size: 130px; 
+  min-inline-size: 130px;
   min-block-size: 38px;
-  padding-inline: 20px; 
+  padding-inline: 20px;
   cursor: pointer;
   transition: box-shadow 0.3s ease;
 }
@@ -174,10 +174,10 @@ font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 
 .card__text-button::after {
   position: absolute;
-  content: '';
+  content: "";
   transform-origin: left;
-  width: 100%;
-  height: 100%;
+  inline-size: 100%;
+  block-size: 100%;
   background-color: var(--accent-color);
   transform: scaleX(0);
   transition: transform 0.5s ease-in-out;
@@ -235,7 +235,7 @@ font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 
 .dialog::backdrop {
   background-color: rgba(0, 0, 0, 0.75);
-} 
+}
 
 @media (width <= 375px) {
   .card__text-button_icon {
@@ -246,7 +246,7 @@ font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 }
 
 .decoration-0-sprint {
-  filter: brightness(1.2) saturate(1.1);
+  filter: brightness(1.2) saturate(1.1) hue-rotate(10deg);
 }
 
 .decoration-1-1-sprint {
@@ -254,7 +254,7 @@ font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 }
 
 .decoration-1-2-sprint {
-  filter: saturate(1.2);
+  filter: contrast(1.2) grayscale(1);
 }
 
 .decoration-2-1-sprint {
@@ -262,7 +262,7 @@ font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 }
 
 .decoration-2-2-sprint {
-  filter: brightness(1.1) sepia(0.5);
+  filter: brightness(1.2) sepia(0.5);
 }
 
 .decoration-3-1-sprint {
@@ -270,7 +270,7 @@ font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 }
 
 .decoration-3-2-sprint {
-  filter: saturate(1.2);
+  filter: saturate(1.2) hue-rotate(10deg);
 }
 
 .decoration-4-sprint {
@@ -304,27 +304,27 @@ font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 }
 
 .like-icon:active .core {
-  fill: var(--animation-fill-color, #FF0000);
+  fill: var(--animation-fill-color, #ff0000);
   transition: fill 0.3s linear;
 }
 
 .like-icon:active .main-body {
-  fill: var(--animation-fill-color, #FF0000);
+  fill: var(--animation-fill-color, #ff0000);
   transition: fill 0.3s linear 0.05s;
 }
 
 .like-icon.is-liked .core {
-  fill: var(--animation-fill-color, #FF0000);
+  fill: var(--animation-fill-color, #ff0000);
   transition: fill 0.3s linear;
 }
 
 .like-icon.is-liked .main-body {
-  fill: var(--animation-fill-color, #FF0000);
+  fill: var(--animation-fill-color, #ff0000);
   transition: fill 0.3s linear 0.05s;
 }
 
 .like-icon.is-liked .contour {
-  fill: var(--animation-fill-color, #FF0000);
+  fill: var(--animation-fill-color, #ff0000);
   transition: fill 0.3s linear 0.06s;
 }
 
