@@ -157,7 +157,7 @@
   background-color: var(--bg-color, #fff);
   min-inline-size: 130px;
   min-block-size: 38px;
-  padding-inline: 20px;
+  padding-inline: 18px;
   cursor: pointer;
   transition: box-shadow 0.3s ease;
 }
@@ -184,7 +184,7 @@
 
 .card__text-button_icon {
   min-block-size: 55px;
-  /* gap: 8px; */
+  gap: 8px;
 }
 
 .button__text {
@@ -242,6 +242,11 @@
 
   .dialog {
     padding-inline: 36px;
+  }
+
+  .floppy-icon-save {
+    block-size: 28px;
+    inline-size: 28px;
   }
 }
 
